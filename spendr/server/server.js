@@ -20,6 +20,14 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/api/expenses/forecast-test", (req, res) => {
+    console.log("FORECAST TEST ROUTE REACHED");
+
+    res.status(200).json({
+        message: "Forecast test route is working"
+    });
+});
+
 app.use("/api/expenses", expenseRoutes);
 
 app.use((req, res) => {

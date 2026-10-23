@@ -97,6 +97,8 @@ const getExpenseById = async (req, res) => {
   try {
     const { id } = req.params;
 
+    console.log("GET EXPENSE BY ID:", req.originalUrl, id);
+
     if (!mongoose.isValidObjectId(id)) {
       return res.status(400).json({
         message: "Invalid expense ID"
@@ -358,10 +360,12 @@ const deleteExpense = async (req, res) => {
     const { id } = req.params;
 
     if (!mongoose.isValidObjectId(id)) {
-      return res.status(400).json({
+    console.log("INVALID ID HANDLER REACHED:", req.method, req.originalUrl);
+
+    return res.status(400).json({
         message: "Invalid expense ID"
-      });
-    }
+    });
+}
 
     const expense = await Expense.findByIdAndDelete(id);
 
