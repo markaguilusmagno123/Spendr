@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 
 const express = require("express");
@@ -5,6 +6,7 @@ const cors = require("cors");
 
 const connectDB = require("./config/db");
 const expenseRoutes = require("./routes/expenseRoutes");
+const aiRoutes = require("./routes/aiRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -20,16 +22,13 @@ app.get("/", (req, res) => {
     });
 });
 
-app.get("/api/expenses/forecast-test", (req, res) => {
-    console.log("FORECAST TEST ROUTE REACHED");
+// AI routes
+app.use("/api/ai", aiRoutes);
 
-    res.status(200).json({
-        message: "Forecast test route is working"
-    });
-});
-
+// Existing expense routes
 app.use("/api/expenses", expenseRoutes);
 
+// 404 handler
 app.use((req, res) => {
     res.status(404).json({
         message: "API route not found"
