@@ -1,0 +1,52 @@
+
+.spendr-ai {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.spendr-ai h2 {
+    color: #2563eb;
+    margin-top: 0;
+}
+
+.spendr-ai textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    resize: vertical;
+    font: inherit;
+}
+
+.spendr-ai button {
+    margin-top: 12px;
+    padding: 12px 18px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.spendr-ai button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ai-answer {
+    margin-top: 20px;
+    padding: 16px;
+    background: #eff6ff;
+    border-radius: 10px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.ai-error {
+    color: #b91c1c;
+}
